@@ -41,3 +41,13 @@ These issues were resolved by correcting the XML layout, updating the Java code,
 Through this activity, I learned how Android Activity Lifecycle callbacks work and how to monitor application behavior using Logcat. I also gained experience using Java, XML layouts, View Binding, and saving application state during screen configuration changes.
 
 Overall, this activity helped me understand the basic structure of Android application development and how to implement simple but useful application features.
+
+## Lab Activity 2: Layout Hierarchy & Explicit/Implicit Intents
+
+### Laboratory Discussion
+
+In LabCheck, the three Android layouts have different purposes in designing the application's user interface. **ConstraintLayout** is used for arranging UI components based on constraints, making the screen more flexible and responsive to different device sizes. **LinearLayout** organizes components vertically or horizontally, which is useful for grouping buttons and other interface elements. **RelativeLayout** positions components in relation to other views or the parent layout, making it useful for displaying station information such as the station code, status, and specifications.
+
+The application also uses explicit and implicit Intents to perform different actions. An **Explicit Intent** is used to navigate directly from `MainActivity` to `StationDetailActivity` while passing station information such as the station code, current status, and issue notes. Meanwhile, an **Implicit Intent** allows the application to perform actions using other available applications on the device. In LabCheck, it is used as a quick-support feature to contact laboratory maintenance through the phone dialer.
+
+Overall, this activity helped me understand how Android layouts organize interface components and how Intents allow different activities and applications to communicate. It also improved my knowledge of building a more organized, responsive, and functional Android application.

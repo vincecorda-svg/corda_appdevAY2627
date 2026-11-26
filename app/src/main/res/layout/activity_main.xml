@@ -1,54 +1,134 @@
 
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp">
+    android:padding="16dp">
 
+    <!-- MAIN HEADER -->
     <TextView
-        android:id="@+id/tvAppTitle"
+        android:id="@+id/tvHeaderLab"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="LabCheck - CompLab 1"
-        android:textSize="22sp"
+        android:text="Computer Lab - Workstation Readiness"
+        android:textSize="25sp"
+        android:textColor="#2B2B2B"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- STATION NOTE -->
     <TextView
-        android:id="@+id/tvLifecycleLog"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="12dp"
-        android:background="#F4F6F9"
-        android:padding="12dp"
-        android:text="Lifecycle trace ready..."
-        android:textSize="13sp"
-        app:layout_constraintTop_toBottomOf="@id/tvAppTitle"
-        app:layout_constraintBottom_toTopOf="@id/btnSimulateTick"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Button
-        android:id="@+id/btnSimulateTick"
+        android:id="@+id/tvStationNote"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="Log Check-In Heartbeat"
-        app:layout_constraintBottom_toTopOf="@id/btnClearLog"
+        android:text="Note: No issues reported"
+        android:textSize="14sp"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/tvHeaderLab"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
-        android:id="@+id/btnClearLog"
+    <!-- FEATURED STATION -->
+    <RelativeLayout
+        android:id="@+id/rlFeaturedStation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Clear Log"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="14dp"
+        android:padding="14dp"
+        app:layout_constraintTop_toBottomOf="@id/tvStationNote"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/tvStationCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="PC-07 - Android Studio SDK"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStationStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:text="Needs Check"
+            android:textColor="#B26A00"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStationSpec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvStationCode"
+            android:layout_marginTop="6dp"
+            android:text="16GB RAM • Emulator KVM • USB Port Checked" />
+
+    </RelativeLayout>
+
+    <!-- FIRST ROW BUTTONS -->
+    <LinearLayout
+        android:id="@+id/llActions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/rlFeaturedStation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnInspectStation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="Inspect" />
+
+        <Button
+            android:id="@+id/btnShareReport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="Share Status" />
+
+    </LinearLayout>
+
+    <!-- SECOND ROW BUTTONS -->
+    <LinearLayout
+        android:id="@+id/llExtraActions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintTop_toBottomOf="@id/llActions"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btnSwitchStation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="6dp"
+            android:text="Switch Station" />
+
+        <Button
+            android:id="@+id/btnContactMaintenance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="6dp"
+            android:text="Contact Maintenance" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
